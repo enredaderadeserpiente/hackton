@@ -70,14 +70,21 @@ class CopenometrosController < ApplicationController
       cantidad = []
       grados = []
       gramos = []
+      sangre = []
+      peso = 72.9
       params[:liquido].keys.each do |l|
+         gr = (params[:liquido][l][:cantidad].to_f * params[:liquido][l][:grado].to_f * 0.8) / 100
          cantidad << params[:liquido][l][:cantidad].to_f
          grados << params[:liquido][l][:grado].to_f
          gramos << (params[:liquido][l][:cantidad].to_f * params[:liquido][l][:grado].to_f * 0.8) / 100
+         sangre << gr / (peso * 0.7)
       end
       @sum_cantidad = cantidad.inject {|sum,n| sum + n}
       @sum_grados = grados.inject {|sum,n| sum + n}
       @sum_gramos = gramos.inject {|sum,n| sum + n}
+      @sum_sangre = sangre.inject {|sum,n| sum + n}
+      @peso = peso
+      @sexo = "Masculino"
     end
     
   end

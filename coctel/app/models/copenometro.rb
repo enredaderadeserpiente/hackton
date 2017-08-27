@@ -5,7 +5,9 @@ class Copenometro < ApplicationRecord
 	end
 
 	def calculo2
-		a = 10
+		peso = 72.9
+		gr = calculo
+		sangre = gr / (peso * 0.7)
 	end
 
 end
