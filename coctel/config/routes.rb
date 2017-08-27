@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :usuarios
   get 'copenometros/calcular', to: 'copenometros#calcular'
   post 'copenometros/calcular'
 

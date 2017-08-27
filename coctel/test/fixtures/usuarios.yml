@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  genero: MyString
+  peso: 1
+  edad: 1
+  horas_tomando: 1
+
+two:
+  genero: MyString
+  peso: 1
+  edad: 1
+  horas_tomando: 1

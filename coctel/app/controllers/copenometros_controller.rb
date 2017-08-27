@@ -16,6 +16,7 @@ class CopenometrosController < ApplicationController
   def new
     @copenometro = Copenometro.new
     @coponemotro_lista =  Copenometro.all
+    @usuarios = Usuario.new
   end
 
   # GET /copenometros/1/edit

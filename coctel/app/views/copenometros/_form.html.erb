@@ -1,3 +1,4 @@
+<%#= render 'usuarios/form', usuario: usuario %>
 <%= form_with(model: copenometro, local: true) do |form| %>
   <% if copenometro.errors.any? %>
     <div id="error_explanation">
@@ -11,24 +12,26 @@
     </div>
   <% end %>
 
-  <div class="field">
+
+  <div class="field form-group">
     <%= form.label :liquido %>
-    <%= form.text_field :liquido, id: :copenometro_liquido%>
+    <%= form.text_field :liquido, id: :copenometro_liquido, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :ml %>
-    <%= form.number_field :ml, id: :copenometro_ml %>
+  <div class="field form-group">
+    <%= form.label "ml de destilado" %>
+    <%= form.number_field :ml, id: :copenometro_ml, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :grado %>
-    <%= form.number_field :Grados2, id: :copenometro_Grados2, step: :any %>
+    <%= form.number_field :Grados2, id: :copenometro_Grados2, step: :any, class: "form-control"  %>
   </div>
 
 
   <input type="hidden" name="Ga" value="10">
+
   <div class="actions">
-    <%= form.submit %>
+      <%= form.submit "Agregar copete",  class: "btn btn-success" %>
   </div>
 <% end %>

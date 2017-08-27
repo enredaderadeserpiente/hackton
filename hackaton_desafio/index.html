@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Saira" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:900" rel="stylesheet">
+
+  <title>Copenometro</title>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>COPENÓMETRO</h1>
+  </header>
+  <section class="arriba">
+    <div class="row">
+        <section class="arma_tu_copete caja">
+          <div class="col-md-4 col-md-offset-1">
+                <div class="titulo">
+                  <h2>Arma tu copete</h2>
+                </div>
+                <div class="bloque">
+                  <form>
+                    <div class="form-group">
+                      <label for="email">Nombre del copete:</label>
+                      <input type="text" class="form-control nombre" id="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Ml de bebida:</label>
+                      <input type="number" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Ml de destilado:</label>
+                      <input type="number" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Grado alcoholico:</label>
+                      <input type="number" class="form-control" id="email">
+                    </div>
+                    <button type="submit" class="btn btn-success">Agregar copete</button>
+                  </form>
+                </div>
+          </div>
+        </section>
+        <section class="tus_datos caja">
+          <div class="col-md-4 col-md-offset-1 ">
+                <div class="titulo">
+                  <h2>Tus datos</h2>
+                </div>
+                <div class="bloque">
+                  <form>
+                    <div class="form-group">
+                      <label>Sexo:</label>
+                      <br>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio">Hombre
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="optradio">Mujer
+                      </label>
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Edad:</label>
+                      <input type="number" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Peso:</label>
+                      <input type="number" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Horas tomando:</label>
+                      <input type="number" class="form-control" id="email">
+                    </div>
+                    <button type="submit" class="btn btn-success ">Guardar datos</button>
+                  </form>
+                </div>
+            </div>
+        </section>
+      </div>
+  </section>
+
+  <section class="abajo">
+    <div class="row">
+      <section class="tus_copetes caja">
+        <div class="col-md-4 col-md-offset-1 ">
+          <div class="titulo">
+            <h2>Tus Copetes</h2>
+          </div>
+          <div class="bloque">
+            <div class="parrafo_copete">
+              <img alt="icono copete" src="images/icono_copete.png" width="13" >
+              <p> Vino </p>
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+              <div class="clearfix"></div>
+            </div>
+            <button type="submit" class="btn btn-success">Calcular</button>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="resultados caja">
+        <div class="col-md-4 col-md-offset-1 ">
+            <div class="titulo">
+              <h2>Resultados</h2>
+            </div>
+            <div class="bloque">
+              <div class="parrafo_resultados">
+                <p class="titular">Alcohol en la sangre: </p><p>0,86</p>
+                <p class="titular">Nivel de ebriedad: </p><p>Muy alto</p>
+                <p class="titular">Dificultad en el transito: </p><p>¡Critíco no conduzca!</p>
+                <p class="titular">Efectos: </p><p>La motricidad se ve afectada, se retardan los moviemientos. Aparece una sensación de euforia y confiaza. Se torna agresivo y temerario por impulsos sin razonar</p>
+              </div>
+            </div>
+          </div>
+      </section>
+    </div>
+  </section>
+</div>
+
+
+</body>
+</html>

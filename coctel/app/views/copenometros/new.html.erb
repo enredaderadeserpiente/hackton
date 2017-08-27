@@ -1,38 +1,67 @@
-<h1>New Copenometro</h1>
-
-<%= render 'form', copenometro: @copenometro %>
-
-<%= link_to 'Back', copenometros_path %>
-
-<%= form_tag(copenometros_calcular_path) do %>
-
-<table>
-	<thead class="table">
-		<tr>
-			<th>Liquido</th>
-			<th>Ml</th>
-			<th>Grado</th>
-			<th colspan="3"></th>
-		</tr>
-	</thead>
-
-	<tbody>
-		<% @coponemotro_lista.each do |copenometro| %>
-			<tr>
-				<td><%= copenometro.liquido %></td>
-				<td><%= copenometro.ml %></td>
-				<input type="hidden" name="liquido[<%= copenometro.liquido %>][cantidad]" value="<%= copenometro.ml %>">
-				<td><%= copenometro.Grados2 %></td>
-				<input type="hidden" name="liquido[<%= copenometro.liquido %>][grado]" value="<%= copenometro.Grados2 %>">
-				<td><%= link_to 'Edit', edit_copenometro_path(copenometro) %></td>
-				<td><%= link_to 'Destroy', copenometro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-			</tr></br>
-		<% end %>
-	</tbody>
-</table>
-
-
-	<%= submit_tag "Calcular" %>
-
-	
-<% end %>
+<div class="container">
+	<header>
+	<h1>COPENÓMETRO</h1>
+	</header>
+	<section class="arriba">
+		 <div class="row">
+		 	<section class="arma_tu_copete caja">
+		 		<div class="col-md-4 col-md-offset-1">
+					<div class="titulo">
+				      <h2>Tus datos</h2>
+				    </div>
+				    <div class="bloque">
+						<%= render 'usuarios/form', usuario: @usuarios %>
+					</div>
+				</div>
+			</section>
+			<section class="arma_tu_copete caja">
+				<div class="col-md-4 col-md-offset-1">
+					<div class="titulo">	
+						<h3>Arma tu copete</h3>
+					</div>
+					<div class="bloque">	
+						<%= render 'form', copenometro: @copenometro %>
+					<div>
+				</div>
+			</section>
+		</div>
+	</section>
+	 <section class="abajo">
+	    <div class="row">
+	    	<section class="tus_copetes caja">
+	    		<div class="col-md-4 col-md-offset-1 ">
+	    			<div class="titulo">
+	    				<h2>Tus copetes<h2>
+	    			</div>
+	    			<div class="bloque">
+						<%= form_tag(copenometros_calcular_path) do %>
+								<table>
+									<tbody>
+										<% @coponemotro_lista.each do |copenometro| %>
+											
+												<p><%= copenometro.liquido %><p>
+												<input type="hidden" name="liquido[<%= copenometro.liquido %>][cantidad]" value="<%= copenometro.ml %>">
+												<input type="hidden" name="liquido[<%= copenometro.liquido %>][grado]" value="<%= copenometro.Grados2 %>">
+												<%= link_to 'Destroy', copenometro, method: :delete, data: { confirm: 'Are you sure?' } %>
+											</br>
+										<% end %>
+									</tbody>
+								</table>
+						<%= submit_tag "Calcular" , class: "btn btn-success" %>
+						<% end %>
+					</div>
+				</div>
+			</section>
+			<section class="resultados caja">
+				<div class="col-md-4 col-md-offset-1 ">
+					<div class="titulo">	
+						<h2>Resultados</h2>
+					</div>
+					<div class="bloque">
+						<%= render 'usuarios/form', usuario: @usuarios %>
+					<div>
+				</div>
+			</section>
+		</div>
+	</section>			
+</div>
