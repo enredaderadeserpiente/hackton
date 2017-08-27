@@ -1,0 +1,2 @@
+module CopenometrosHelper
+end

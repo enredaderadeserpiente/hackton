@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Copenometros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Liquido</th>
+      <th>Ml</th>
+      <th>Grado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @copenometros.each do |copenometro| %>
+      <tr>
+        <td><%= copenometro.liquido %></td>
+        <td><%= copenometro.ml %></td>
+        <td><%= copenometro.grado %></td>
+        <td><%= link_to 'Show', copenometro %></td>
+        <td><%= link_to 'Edit', edit_copenometro_path(copenometro) %></td>
+        <td><%= link_to 'Destroy', copenometro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Copenometro', new_copenometro_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  liquido: MyString
+  ml: 1
+  grado: 1
+
+two:
+  liquido: MyString
+  ml: 1
+  grado: 1

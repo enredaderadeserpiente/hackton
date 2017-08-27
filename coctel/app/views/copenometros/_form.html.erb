@@ -1,0 +1,34 @@
+<%= form_with(model: copenometro, local: true) do |form| %>
+  <% if copenometro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(copenometro.errors.count, "error") %> prohibited this copenometro from being saved:</h2>
+
+      <ul>
+      <% copenometro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :liquido %>
+    <%= form.text_field :liquido, id: :copenometro_liquido %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ml %>
+    <%= form.number_field :ml, id: :copenometro_ml %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grado %>
+    <%= form.number_field :grado, id: :copenometro_grado %>
+  </div>
+
+
+  <input type="hidden" name="Ga" value="10">
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

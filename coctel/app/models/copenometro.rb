@@ -1,0 +1,2 @@
+class Copenometro < ApplicationRecord
+end

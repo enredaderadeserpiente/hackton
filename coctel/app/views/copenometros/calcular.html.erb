@@ -1,0 +1,27 @@
+
+<table>
+	<thead class="table">
+		<tr>
+			<th>Liquido</th>
+			<th>Ml</th>
+			<th>Grado</th>
+			<th>° Alcohólico</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @copenomotro_lista.each do |copenometro| %>
+			<tr>
+				<td><%= copenometro.liquido %></td>
+				<td><%= copenometro.ml %></td>
+				<input type="hidden" name="liquido[<%= copenometro.liquido %>][cantidad]" value="<%= copenometro.ml %>">
+				<td><%= copenometro.grado %></td>
+				<td><%= copenometro.Ga %></td>	
+				<input type="hidden" name="liquido[<%= copenometro.liquido %>][grado]" value="<%= copenometro.grado %>">
+			</tr></br>
+		<% end %>
+	</tbody>
+</table>
+
+<p>Grados : <%= @sum_grados %></p>
+<p>Cantidad : <%= @sum_cantidad %></p>
