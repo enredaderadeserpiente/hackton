@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	get 'copenometros/calcular', to: 'copenometros#calcular'
+  get 'copenometros/calcular', to: 'copenometros#calcular'
   post 'copenometros/calcular'
 
   resources :copenometros

@@ -5,7 +5,7 @@
 			<th>Liquido</th>
 			<th>Ml</th>
 			<th>Grado</th>
-			<th>° Alcohólico</th>
+			<th>G de Alcohol</th>
 		</tr>
 	</thead>
 
@@ -15,13 +15,14 @@
 				<td><%= copenometro.liquido %></td>
 				<td><%= copenometro.ml %></td>
 				<input type="hidden" name="liquido[<%= copenometro.liquido %>][cantidad]" value="<%= copenometro.ml %>">
-				<td><%= copenometro.grado %></td>
-				<td><%= copenometro.Ga %></td>	
-				<input type="hidden" name="liquido[<%= copenometro.liquido %>][grado]" value="<%= copenometro.grado %>">
+				<td><%= copenometro.Grados2 %></td>
+				<td><%= copenometro.calculo %></td>	
+				<input type="hidden" name="liquido[<%= copenometro.liquido %>][grado]" value="<%= copenometro.Grados2 %>">
 			</tr></br>
 		<% end %>
 	</tbody>
 </table>
 
-<p>Grados : <%= @sum_grados %></p>
-<p>Cantidad : <%= @sum_cantidad %></p>
+<p>Cantidad total de ML: <%= @sum_cantidad %></p>
+<p>Total de Grados : <%= @sum_grados %></p>
+<p>Total Gramos de Alcohol:<%=  @sum_gramos %></p>

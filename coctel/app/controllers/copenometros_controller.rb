@@ -69,13 +69,16 @@ class CopenometrosController < ApplicationController
       @sum_grados = 0
       cantidad = []
       grados = []
+      gramos = []
       params[:liquido].keys.each do |l|
-         cantidad << params[:liquido][l][:cantidad].to_i
-         grados << params[:liquido][l][:grado].to_i
+         cantidad << params[:liquido][l][:cantidad].to_f
+         grados << params[:liquido][l][:grado].to_f
+         gramos << (params[:liquido][l][:cantidad].to_f * params[:liquido][l][:grado].to_f * 0.8) / 100
       end
       @sum_cantidad = cantidad.inject {|sum,n| sum + n}
       @sum_grados = grados.inject {|sum,n| sum + n}
-   end
+      @sum_gramos = gramos.inject {|sum,n| sum + n}
+    end
     
   end
 
@@ -87,6 +90,6 @@ class CopenometrosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def copenometro_params
-      params.require(:copenometro).permit(:liquido, :ml, :grado, :Ga)
+      params.require(:copenometro).permit(:liquido, :ml, :Grados2, :Ga)
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170827023016) do
+ActiveRecord::Schema.define(version: 20170827064225) do
 
   create_table "copenometros", force: :cascade do |t|
     t.string "liquido"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170827023016) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "Ga"
+    t.float "Grados2"
   end
 
 end
