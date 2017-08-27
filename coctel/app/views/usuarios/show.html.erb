@@ -1,24 +1,57 @@
-<p id="notice"><%= notice %></p>
+<h1> Tus Datos </h1>
+<p>Peso: <%= @usuario.peso %></p>
+<p>Sexo: <%= @usuario.genero %></p>
 
-<p>
-  <strong>Genero:</strong>
-  <%= @usuario.genero %>
-</p>
+<hr>
 
-<p>
-  <strong>Peso:</strong>
-  <%= @usuario.peso %>
-</p>
+<section class="arma_tu_copete caja">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-2">
+      <div class="titulo">
+        <h3>Arma tu copete</h3>
+      </div>
+      <div class="bloque">
+        <%= render 'copenometros/form', copenometro: @copenometro %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="titulo"> <h3> Copetes </h3> </div>
+      <div class="bloque">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>
+                Cantidad de Líquido
+              </th>
+              <th>
+                ML
+              </th>
+              <th>
+                Grados alcohólicos
+              </th>
+              <th>
+                Gramos alcohólicos
+              </th>
 
-<p>
-  <strong>Edad:</strong>
-  <%= @usuario.edad %>
-</p>
+            </tr>
+          </thead>
+          <% @copenometros.each do |c| %>
+            <tbody>
+              <tr>
+                <td> <%= c.liquido %> </td>
+                <td> <%= c.ml %> </td>
+                <td> <%= c.Grados2 %> </td>
+                <td> <%= c.gramos_alcoholico %> </td>
+              </tr>
+          <% end %>
+            <tr>
+              <td> total: </td>
+              <td colspan="2"> <%= @usuario.alcohol_en_sangre %> </td>
+            </tr>
+        </tbody>
 
-<p>
-  <strong>Horas tomando:</strong>
-  <%= @usuario.horas_tomando %>
-</p>
-
-<%= link_to 'Edit', edit_usuario_path(@usuario) %> |
-<%= link_to 'Back', usuarios_path %>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,8 +1,7 @@
-<%#= render 'usuarios/form', usuario: usuario %>
-<%= form_with(model: copenometro, local: true) do |form| %>
-  <% if copenometro.errors.any? %>
+<%= form_with(model: [@usuario, @copenometro], local: true) do |form| %>
+  <% if @copenometro.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(copenometro.errors.count, "error") %> prohibited this copenometro from being saved:</h2>
+      <h2><%= pluralize(@copenometro.errors.count, "error") %> prohibited this copenometro from being saved:</h2>
 
       <ul>
       <% copenometro.errors.full_messages.each do |message| %>

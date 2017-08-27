@@ -10,12 +10,14 @@ class CopenometrosController < ApplicationController
   # GET /copenometros/1
   # GET /copenometros/1.json
   def show
+    @copenometro = Copenometro.new
+
   end
 
   # GET /copenometros/new
   def new
     @copenometro = Copenometro.new
-    @coponemotro_lista =  Copenometro.all
+    @coponemotro_lista = Copenometro.all
     @usuarios = Usuario.new
   end
 
@@ -26,11 +28,13 @@ class CopenometrosController < ApplicationController
   # POST /copenometros
   # POST /copenometros.json
   def create
+    @usuario = Usuario.find(params[:usuario_id])
     @copenometro = Copenometro.new(copenometro_params)
+    @copenometro.usuario = @usuario
 
     respond_to do |format|
       if @copenometro.save
-        format.html { redirect_to  new_copenometro_path, notice: 'Agregado con Exito' }
+        format.html { redirect_to @usuario, notice: 'Agregado con Exito' }
         format.json { render :show, status: :created, location: @copenometro }
       else
         format.html { render :new }
@@ -64,30 +68,7 @@ class CopenometrosController < ApplicationController
   end
 
   def calcular
-    @copenomotro_lista =  Copenometro.all
-    if params[:liquido].present?
-      @sum_cantidad = 0
-      @sum_grados = 0
-      cantidad = []
-      grados = []
-      gramos = []
-      sangre = []
-      peso = 72.9
-      params[:liquido].keys.each do |l|
-         gr = (params[:liquido][l][:cantidad].to_f * params[:liquido][l][:grado].to_f * 0.8) / 100
-         cantidad << params[:liquido][l][:cantidad].to_f
-         grados << params[:liquido][l][:grado].to_f
-         gramos << (params[:liquido][l][:cantidad].to_f * params[:liquido][l][:grado].to_f * 0.8) / 100
-         sangre << gr / (peso * 0.7)
-      end
-      @sum_cantidad = cantidad.inject {|sum,n| sum + n}
-      @sum_grados = grados.inject {|sum,n| sum + n}
-      @sum_gramos = gramos.inject {|sum,n| sum + n}
-      @sum_sangre = sangre.inject {|sum,n| sum + n}
-      @peso = peso
-      @sexo = "Masculino"
-    end
-    
+    @copenomotro_lista = Copenometro.all
   end
 
   private

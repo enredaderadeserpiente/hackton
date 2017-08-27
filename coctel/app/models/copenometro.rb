@@ -1,7 +1,8 @@
 class Copenometro < ApplicationRecord
+  belongs_to :usuario
 
-	def calculo
-		(self.ml*self.Grados2.to_f*0.8)/100
+	def gramos_alcoholico
+		(self.ml * self.Grados2 * 0.8) / 100
 	end
 
 	def calculo2

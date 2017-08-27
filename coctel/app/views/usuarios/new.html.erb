@@ -1,5 +1,17 @@
-<h1>New Usuario</h1>
-
-<%= render 'form', usuario: @usuario %>
-
-<%= link_to 'Back', usuarios_path %>
+<div class="container">
+  <header>
+    <h1>COPENÓMETRO</h1>
+  </header>
+  <div class="row">
+    <section class="arma_tu_copete caja">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="titulo">
+          <h2>Tus datos</h2>
+        </div>
+        <div class="bloque">
+          <%= render 'usuarios/form', usuario: @usuario %>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
